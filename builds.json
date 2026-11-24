@@ -1,0 +1,14 @@
+[
+  {
+    "id": "turnip-26.3.1",
+    "name": "Mesa Turnip 26.3.1",
+    "ref": "mesa-26.3.1",
+    "notes": "Mesa's latest release"
+  },
+  {
+    "id": "turnip-main-5aa9bd4",
+    "name": "Mesa Turnip (development, 2026-11-24)",
+    "ref": "5aa9bd489de15b69bececd73f50fc0e3fc0d21ef",
+    "notes": "Mesa's development branch: the newest GPU support and fixes, less tested"
+  }
+]
