@@ -36,7 +36,7 @@ endian = 'little'
 INI
 
 meson setup "$work/build" "$src" --cross-file "$work/android-aarch64.ini" \
-  -Dbuildtype=release -Db_lto=true -Dstrip=true \
+  -Dbuildtype=release -Dstrip=true \
   -Dplatforms=android -Dplatform-sdk-version=$api -Dandroid-stub=true -Dandroid-libbacktrace=disabled \
   -Dgallium-drivers= -Dvulkan-drivers=freedreno -Dfreedreno-kmds=kgsl -Dvulkan-beta=true \
   -Dllvm=disabled -Dzstd=disabled -Dgles1=disabled -Dgles2=disabled -Dopengl=false -Degl=disabled -Dglx=disabled -Dgbm=disabled

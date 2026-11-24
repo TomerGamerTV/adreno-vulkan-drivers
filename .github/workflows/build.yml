@@ -15,7 +15,7 @@ jobs:
     outputs:
       builds: ${{ steps.read.outputs.builds }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - id: read
         run: echo "builds=$(jq -c . builds.json)" >> "$GITHUB_OUTPUT"
 
@@ -27,7 +27,7 @@ jobs:
       matrix:
         build: ${{ fromJson(needs.list.outputs.builds) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Tools
         run: |
           sudo apt-get update -qq
@@ -37,7 +37,7 @@ jobs:
           echo "NDK: $(basename "$ANDROID_NDK_LATEST_HOME")"
       - name: Build ${{ matrix.build.name }}
         run: scripts/build.sh "${{ matrix.build.id }}" "${{ matrix.build.name }}" "${{ matrix.build.ref }}" out
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: ${{ matrix.build.id }}
           path: out/
@@ -46,8 +46,8 @@ jobs:
     needs: build
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
+      - uses: actions/checkout@v5
+      - uses: actions/download-artifact@v5
         with:
           path: out
           merge-multiple: true
